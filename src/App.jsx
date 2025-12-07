@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import talabaLogo from './assets/talaba-logo.png';
 import sharedCardImg from './assets/shared-card.png';
 
 import {
@@ -262,7 +263,7 @@ function App() {
                   className="w-14 h-14 rounded-full object-cover"
                 />
                 {chat.unread > 0 && (
-                  <div className="absolute -top-1 -right-1 bg-gradient-to-r from-orange-500 to-pink-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
+                  <div className="absolute -top-1 -right-1 bg-[#ed3500] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
                     {chat.unread}
                   </div>
                 )}
@@ -281,7 +282,7 @@ function App() {
                 >
                   {chat.lastMessage}
                 </p>
-                <span className="text-xs text-orange-500 mt-1 inline-block">
+                <span className="text-xs text-[#7499d5] mt-1 inline-block">
                   {chat.type === 'owner' ? '🏠 Owner' : '👤 Roommate'}
                 </span>
               </div>
@@ -427,13 +428,9 @@ function App() {
         <div className="h-full bg-white flex items-center justify-center p-6">
           <div className="bg-white rounded-3xl shadow-xl p-8 w-full max-w-md border border-gray-100">
             {/* Logo/Illustration */}
-            <div className="flex items-center gap-6 mb-8">
-              <div className="flex items-center justify-center bg-gradient-to-br from-orange-400 to-pink-400 w-20 h-20 rounded-2xl shadow-lg">
-                <Home size={40} className="text-white" />
-              </div>
-              <div>
-                <h1 className="text-3xl font-bold text-gray-800">Welcome Back!</h1>
-              </div>
+            <div className="flex flex-col items-center gap-4 mb-8">
+              <img src={talabaLogo} alt="TalabaHouse" className="w-40 h-auto" />
+              <h1 className="text-3xl font-bold text-gray-800">Welcome Back!</h1>
             </div>
 
             {/* Login Form */}
@@ -445,7 +442,7 @@ function App() {
                 <input
                   type="email"
                   placeholder="you@example.com"
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7499d5] focus:border-transparent transition"
                 />
               </div>
               <div>
@@ -455,17 +452,17 @@ function App() {
                 <input
                   type="password"
                   placeholder="••••••••"
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-transparent transition"
+                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7499d5] focus:border-transparent transition"
                 />
               </div>
 
-              <button className="text-sm text-orange-500 hover:text-orange-600 font-medium">
+              <button className="text-sm text-[#7499d5] hover:text-[#5d7db5] font-medium">
                 Forgot password?
               </button>
 
               <button
                 onClick={() => setIsLoggedIn(true)}
-                className="w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white py-3.5 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.02]"
+                className="w-full bg-[#ff6347] text-white py-3.5 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.02]"
               >
                 Sign In
               </button>
@@ -475,7 +472,7 @@ function App() {
                   Don't have an account?{' '}
                   <button
                     onClick={() => setShowAuthForm('signup')}
-                    className="text-orange-500 font-semibold hover:text-orange-600"
+                    className="text-[#7499d5] font-semibold hover:text-[#5d7db5]"
                   >
                     Create Account
                   </button>
@@ -489,7 +486,7 @@ function App() {
 
     // Single multi-step Signup (1–9)
     return (
-      <div className="h-full bg-gradient-to-br from-orange-400 via-pink-400 to-purple-400 flex items-center justify-center p-6">
+      <div className="h-full bg-[#7499d5] flex items-center justify-center p-6">
         <div className="bg-white/95 backdrop-blur-lg rounded-3xl shadow-2xl p-8 w-full max-w-md">
           {/* Progress Bar */}
           <div className="mb-6">
@@ -506,7 +503,7 @@ function App() {
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2">
               <div
-                className="bg-gradient-to-r from-orange-500 to-pink-500 h-2 rounded-full transition-all duration-300"
+                className="bg-gradient-to-r from-[#7499d5] to-[#ed3500] h-2 rounded-full transition-all duration-300"
                 style={{ width: `${(signupStep / TOTAL_STEPS) * 100}%` }}
               />
             </div>
@@ -531,7 +528,7 @@ function App() {
                   value={signupData.fullName}
                   onChange={(e) => handleSignupChange('fullName', e.target.value)}
                   placeholder="John Doe"
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                 />
               </div>
 
@@ -544,7 +541,7 @@ function App() {
                   value={signupData.email}
                   onChange={(e) => handleSignupChange('email', e.target.value)}
                   placeholder="you@example.com"
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                 />
               </div>
 
@@ -557,7 +554,7 @@ function App() {
                   value={signupData.password}
                   onChange={(e) => handleSignupChange('password', e.target.value)}
                   placeholder="••••••••"
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                 />
               </div>
 
@@ -570,7 +567,7 @@ function App() {
                   value={signupData.phone}
                   onChange={(e) => handleSignupChange('phone', e.target.value)}
                   placeholder="+212 600 000 000"
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                 />
               </div>
             </div>
@@ -594,7 +591,7 @@ function App() {
                   type="date"
                   value={signupData.dateOfBirth}
                   onChange={(e) => handleSignupChange('dateOfBirth', e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                 />
               </div>
 
@@ -605,7 +602,7 @@ function App() {
                 <select
                   value={signupData.gender}
                   onChange={(e) => handleSignupChange('gender', e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                 >
                   <option value="male">Male</option>
                   <option value="female">Female</option>
@@ -620,7 +617,7 @@ function App() {
                 <select
                   value={signupData.city}
                   onChange={(e) => handleSignupChange('city', e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                 >
                   <option value="">Select City</option>
                   <option value="Rabat">Rabat</option>
@@ -653,7 +650,7 @@ function App() {
                     type="button"
                     onClick={() => handleSignupChange('status', 'student')}
                     className={`w-full py-3 px-4 rounded-xl font-semibold text-sm transition ${signupData.status === 'student'
-                      ? 'bg-orange-500 text-white'
+                      ? 'bg-gray-500 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                   >
@@ -663,7 +660,7 @@ function App() {
                     type="button"
                     onClick={() => handleSignupChange('status', 'employed')}
                     className={`w-full py-3 px-4 rounded-xl font-semibold text-sm transition ${signupData.status === 'employed'
-                      ? 'bg-orange-500 text-white'
+                      ? 'bg-gray-500 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                   >
@@ -683,7 +680,7 @@ function App() {
                   placeholder={
                     signupData.status === 'student' ? 'e.g., UIR' : 'e.g., Company name'
                   }
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                 />
               </div>
 
@@ -693,17 +690,17 @@ function App() {
                 </label>
                 <input
                   type="range"
-                  min="2000"
+                  min="0"
                   max="15000"
                   step="500"
                   value={signupData.budget}
                   onChange={(e) =>
                     handleSignupChange('budget', parseInt(e.target.value) || 2000)
                   }
-                  className="w-full accent-orange-500"
+                  className="w-full accent-gray-500"
                 />
                 <div className="flex justify-between text-xs text-gray-500 mt-1">
-                  <span>2,000 DH</span>
+                  <span>0 DH</span>
                   <span>15,000 DH</span>
                 </div>
               </div>
@@ -729,7 +726,7 @@ function App() {
                   onChange={(e) => handleSignupChange('bio', e.target.value)}
                   placeholder="Tell us about yourself, your interests, and what you're looking for..."
                   rows="4"
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 resize-none"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7499d5] resize-none"
                 />
               </div>
 
@@ -745,7 +742,7 @@ function App() {
                       onChange={(e) =>
                         handleSignupChange('smoker', e.target.checked)
                       }
-                      className="w-5 h-5 accent-orange-500"
+                      className="w-5 h-5 accent-[#7499d5]"
                     />
                     <span className="text-sm font-medium text-gray-700">
                       Smoker
@@ -759,7 +756,7 @@ function App() {
                       onChange={(e) =>
                         handleSignupChange('pets', e.target.checked)
                       }
-                      className="w-5 h-5 accent-orange-500"
+                      className="w-5 h-5 accent-[#7499d5]"
                     />
                     <span className="text-sm font-medium text-gray-700">
                       Have Pets
@@ -775,7 +772,7 @@ function App() {
                 <select
                   value={signupData.lifestyle}
                   onChange={(e) => handleSignupChange('lifestyle', e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                 >
                   <option value="quiet">Quiet & Calm</option>
                   <option value="balanced">Balanced</option>
@@ -810,7 +807,7 @@ function App() {
                       type="button"
                       onClick={() => handleSignupChange('matchGender', opt.value)}
                       className={`w-full py-2.5 rounded-xl text-sm font-semibold transition ${signupData.matchGender === opt.value
-                        ? 'bg-orange-500 text-white'
+                        ? 'bg-gray-500 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                         }`}
                     >
@@ -838,7 +835,7 @@ function App() {
                           parseInt(e.target.value) || 18
                         )
                       }
-                      className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                     />
                   </div>
                   <div>
@@ -854,7 +851,7 @@ function App() {
                           parseInt(e.target.value) || 35
                         )
                       }
-                      className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                     />
                   </div>
                 </div>
@@ -890,7 +887,7 @@ function App() {
                           parseInt(e.target.value) || 2000
                         )
                       }
-                      className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                     />
                   </div>
                   <div>
@@ -906,7 +903,7 @@ function App() {
                           parseInt(e.target.value) || 8000
                         )
                       }
-                      className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                     />
                   </div>
                 </div>
@@ -933,7 +930,7 @@ function App() {
                     type="button"
                     onClick={() => handleSignupChange('matchSmokerOk', true)}
                     className={`w-full py-2.5 rounded-xl text-sm font-semibold transition ${signupData.matchSmokerOk
-                      ? 'bg-orange-500 text-white'
+                      ? 'bg-gray-500 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                   >
@@ -943,7 +940,7 @@ function App() {
                     type="button"
                     onClick={() => handleSignupChange('matchSmokerOk', false)}
                     className={`w-full py-2.5 rounded-xl text-sm font-semibold transition ${!signupData.matchSmokerOk
-                      ? 'bg-orange-500 text-white'
+                      ? 'bg-gray-500 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                   >
@@ -961,7 +958,7 @@ function App() {
                     type="button"
                     onClick={() => handleSignupChange('matchPetsOk', true)}
                     className={`w-full py-2.5 rounded-xl text-sm font-semibold transition ${signupData.matchPetsOk
-                      ? 'bg-orange-500 text-white'
+                      ? 'bg-gray-500 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                   >
@@ -971,7 +968,7 @@ function App() {
                     type="button"
                     onClick={() => handleSignupChange('matchPetsOk', false)}
                     className={`w-full py-2.5 rounded-xl text-sm font-semibold transition ${!signupData.matchPetsOk
-                      ? 'bg-orange-500 text-white'
+                      ? 'bg-gray-500 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                       }`}
                   >
@@ -1009,7 +1006,7 @@ function App() {
                         handleSignupChange('matchCleanliness', opt.value)
                       }
                       className={`w-full py-2.5 rounded-xl text-sm font-semibold transition ${signupData.matchCleanliness === opt.value
-                        ? 'bg-orange-500 text-white'
+                        ? 'bg-gray-500 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                         }`}
                     >
@@ -1036,7 +1033,7 @@ function App() {
                         handleSignupChange('matchNoiseTolerance', opt.value)
                       }
                       className={`w-full py-2.5 rounded-xl text-sm font-semibold transition ${signupData.matchNoiseTolerance === opt.value
-                        ? 'bg-orange-500 text-white'
+                        ? 'bg-gray-500 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                         }`}
                     >
@@ -1075,7 +1072,7 @@ function App() {
                         handleSignupChange('matchSleepSchedule', opt.value)
                       }
                       className={`w-full py-2.5 rounded-xl text-sm font-semibold transition ${signupData.matchSleepSchedule === opt.value
-                        ? 'bg-orange-500 text-white'
+                        ? 'bg-gray-500 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                         }`}
                     >
@@ -1102,7 +1099,7 @@ function App() {
                         handleSignupChange('matchGuests', opt.value)
                       }
                       className={`w-full py-2 rounded-xl text-sm font-semibold transition ${signupData.matchGuests === opt.value
-                        ? 'bg-orange-500 text-white'
+                        ? 'bg-gray-500 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                         }`}
                     >
@@ -1124,7 +1121,7 @@ function App() {
                       parseInt(e.target.value) || 3
                     )
                   }
-                  className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                 >
                   <option value={1}>Just 1 roommate</option>
                   <option value={2}>Up to 2 roommates</option>
@@ -1138,14 +1135,8 @@ function App() {
           {/* Navigation Buttons */}
           <div className="flex gap-3 mt-6">
             <button
-              onClick={prevStep}
-              className="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition"
-            >
-              {signupStep === 1 ? 'Back to Login' : 'Previous'}
-            </button>
-            <button
               onClick={nextStep}
-              className="flex-1 px-6 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all transform hover:scale-[1.02]"
+              className="flex-1 px-6 py-3 bg-[#ff6347] text-white rounded-xl font-semibold hover:shadow-lg transition-all transform hover:scale-[1.02]"
             >
               {signupStep === TOTAL_STEPS ? 'Finish' : 'Next'}
             </button>
@@ -1159,7 +1150,7 @@ function App() {
     <div className="absolute inset-0 flex items-center justify-center z-50 pointer-events-none">
       <div className="bg-white rounded-3xl shadow-2xl p-8 text-center animate-bounce">
         <div className="text-6xl mb-4">🎉</div>
-        <h3 className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
+        <h3 className="text-2xl font-bold bg-[#7499d5]  bg-clip-text text-transparent">
           It's a Match!
         </h3>
         <p className="text-gray-600 mt-2">You matched with {matchedName}!</p>
@@ -1171,7 +1162,7 @@ function App() {
     <div className="absolute inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
       <div className="bg-white rounded-3xl p-6 w-full max-w-md max-h-[85vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
+          <h2 className="text-2xl font-bold bg-[#ff6347] bg-clip-text text-transparent">
             Changed your mind? Change preference!
           </h2>
           <button
@@ -1198,7 +1189,7 @@ function App() {
                       ageMin: parseInt(e.target.value),
                     })
                   }
-                  className="w-full px-4 py-3 bg-gray-50 border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-4 py-3 bg-gray-50 border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                   placeholder="Min"
                 />
               </div>
@@ -1212,7 +1203,7 @@ function App() {
                       ageMax: parseInt(e.target.value),
                     })
                   }
-                  className="w-full px-4 py-3 bg-gray-50 border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-4 py-3 bg-gray-50 border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                   placeholder="Max"
                 />
               </div>
@@ -1231,7 +1222,7 @@ function App() {
                     setPreferences({ ...preferences, gender: g })
                   }
                   className={`py-3 rounded-xl font-semibold capitalize transition ${preferences.gender === g
-                    ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white'
+                    ? 'bg-gray-500 text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                 >
@@ -1257,7 +1248,7 @@ function App() {
                   budget: parseInt(e.target.value),
                 })
               }
-              className="w-full accent-orange-500"
+              className="w-full accent-gray-500"
             />
             <div className="flex justify-between text-xs text-gray-500 mt-1">
               <span>2000 DH</span>
@@ -1265,7 +1256,7 @@ function App() {
             </div>
           </div>
 
-          <div className="bg-orange-50 rounded-xl p-4">
+          <div className="bg-gray-100 rounded-xl p-4">
             <label className="flex items-center gap-3 cursor-pointer">
               <input
                 type="checkbox"
@@ -1276,7 +1267,7 @@ function App() {
                     smoker: !e.target.checked,
                   })
                 }
-                className="w-5 h-5 accent-orange-500"
+                className="w-5 h-5 accent-gray-500"
               />
               <span className="text-sm font-semibold text-gray-700">
                 Non-Smoker Only
@@ -1287,7 +1278,7 @@ function App() {
 
         <button
           onClick={() => setShowPreferences(false)}
-          className="w-full mt-6 py-3.5 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all transform hover:scale-[1.02]"
+          className="w-full mt-6 py-3.5 bg-[#ff6347]  text-white rounded-xl font-semibold hover:shadow-lg transition-all transform hover:scale-[1.02]"
         >
           Apply Filters
         </button>
@@ -1299,7 +1290,7 @@ function App() {
     const currentRoommate = roommates[currentRoommateIndex];
 
     return (
-      <div className="h-full flex flex-col bg-gradient-to-b from-orange-50 to-white">
+      <div className="h-full flex flex-col bg-gradient-to-b from-gray-50 to-white">
         <div className="flex justify-between items-center p-4 bg-white/80 backdrop-blur-sm">
           <div>
             <h2 className="text-2xl font-bold text-gray-800">Discover</h2>
@@ -1307,7 +1298,7 @@ function App() {
           </div>
           <button
             onClick={() => setShowPreferences(true)}
-            className="bg-gradient-to-r from-orange-500 to-pink-500 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition"
+            className="bg-[#7499d5] text-white p-3 rounded-full shadow-lg hover:shadow-xl transition"
           >
             <Filter size={20} />
           </button>
@@ -1339,7 +1330,7 @@ function App() {
                   {currentRoommate.interests.map((interest, idx) => (
                     <span
                       key={idx}
-                      className="bg-gradient-to-r from-orange-100 to-pink-100 text-orange-600 px-3 py-1.5 rounded-full text-sm font-medium"
+                      className="bg-gray-100 text-[#7499d5] px-3 py-1.5 rounded-full text-sm font-medium"
                     >
                       {interest}
                     </span>
@@ -1349,7 +1340,7 @@ function App() {
                   <span className="text-sm text-gray-600">
                     {currentRoommate.smoker ? '🚬 Smoker' : '🚭 Non-smoker'}
                   </span>
-                  <span className="text-sm font-bold text-orange-600">
+                  <span className="text-sm font-bold text-[#7499d5]">
                     {currentRoommate.budget} DH/mo
                   </span>
                 </div>
@@ -1366,7 +1357,7 @@ function App() {
               </button>
               <button
                 onClick={() => handleSwipe('right')}
-                className="bg-gradient-to-r from-orange-500 to-pink-500 w-14 h-14 rounded-full shadow-xl flex items-center justify-center hover:scale-110 transition-transform"
+                className="bg-[#ed3500] w-14 h-14 rounded-full shadow-xl flex items-center justify-center hover:scale-110 transition-transform"
               >
                 <Heart
                   size={26}
@@ -1383,7 +1374,7 @@ function App() {
                 <div
                   key={idx}
                   className={`h-1.5 rounded-full transition-all ${idx === currentRoommateIndex
-                    ? 'w-8 bg-gradient-to-r from-orange-500 to-pink-500'
+                    ? 'w-8 bg-gradient-to-r from-[#7499d5] to-[#ed3500]'
                     : 'w-1.5 bg-gray-300'
                     }`}
                 />
@@ -1425,14 +1416,14 @@ function App() {
               <h3 className="text-2xl font-bold text-gray-800 mb-1">
                 {apt.type}
               </h3>
-              <p className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
+              <p className="text-3xl font-bold text-[#7499d5]">
                 {apt.price} DH<span className="text-lg">/month</span>
               </p>
             </div>
 
             {/* Location */}
             <div className="flex items-start gap-2">
-              <MapPin size={20} className="text-orange-500 mt-1" />
+              <MapPin size={20} className="text-[#7499d5] mt-1" />
               <div>
                 <p className="font-semibold text-gray-800">{apt.location}</p>
                 <p className="text-sm text-gray-500">Rabat, Morocco</p>
@@ -1441,20 +1432,20 @@ function App() {
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-3">
-              <div className="bg-orange-50 rounded-xl p-3 text-center">
-                <p className="text-2xl font-bold text-orange-600">
+              <div className="bg-gray-100 rounded-xl p-3 text-center">
+                <p className="text-2xl font-bold text-gray-600">
                   {apt.bedrooms}
                 </p>
                 <p className="text-xs text-gray-600">Bedrooms</p>
               </div>
-              <div className="bg-pink-50 rounded-xl p-3 text-center">
-                <p className="text-2xl font-bold text-pink-600">
+              <div className="bg-gray-100 rounded-xl p-3 text-center">
+                <p className="text-2xl font-bold text-gray-600">
                   {apt.bathrooms}
                 </p>
                 <p className="text-xs text-gray-600">Bathrooms</p>
               </div>
-              <div className="bg-purple-50 rounded-xl p-3 text-center">
-                <p className="text-2xl font-bold text-purple-600">
+              <div className="bg-gray-100 rounded-xl p-3 text-center">
+                <p className="text-2xl font-bold text-gray-600">
                   {apt.area}
                 </p>
                 <p className="text-xs text-gray-600">Area</p>
@@ -1489,14 +1480,14 @@ function App() {
                   <p className="font-semibold text-gray-800">{apt.owner}</p>
                   <p className="text-sm text-gray-500">Property owner</p>
                 </div>
-                <button className="bg-gradient-to-r from-orange-500 to-pink-500 text-white px-5 py-2 rounded-full text-sm font-semibold">
+                <button className="bg-[#ff6347] text-white px-5 py-2 rounded-full text-sm font-semibold">
                   Contact
                 </button>
               </div>
             </div>
 
             {/* CTA */}
-            <button className="w-full bg-gradient-to-r from-orange-500 to-pink-500 text-white py-4 rounded-xl font-bold text-lg hover:shadow-lg transition-all">
+            <button className="w-full bg-[#ff6347] text-white py-4 rounded-xl font-bold text-lg hover:shadow-lg transition-all">
               Request Viewing
             </button>
           </div>
@@ -1505,21 +1496,21 @@ function App() {
     }
 
     return (
-      <div className="h-full flex flex-col bg-gradient-to-b from-orange-50 to-white">
+      <div className="h-full flex flex-col bg-gradient-to-b from-gray-50 to-white">
         {/* Header */}
         <div className="flex justify-between items-center p-4 bg-white/80 backdrop-blur-sm sticky top-0 z-10">
           <div>
             <h2 className="text-2xl font-bold text-gray-800">Apartments</h2>
             <p className="text-sm text-gray-500">Find your perfect home</p>
           </div>
-          <button className="bg-gradient-to-r from-orange-500 to-pink-500 text-white p-3 rounded-full shadow-lg">
+          <button className="bg-[#7499d5] text-white p-3 rounded-full shadow-lg">
             <Search size={20} />
           </button>
         </div>
 
         {/* Filters */}
         <div className="flex gap-2 px-4 pb-3 overflow-x-auto">
-          <button className="px-4 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full text-sm font-semibold whitespace-nowrap shadow-md">
+          <button className="px-4 py-2 bg-[#ff6347] text-white rounded-full text-sm font-semibold whitespace-nowrap shadow-md">
             All
           </button>
           <button className="px-4 py-2 bg-white text-gray-700 rounded-full text-sm font-semibold whitespace-nowrap border border-gray-200">
@@ -1548,7 +1539,7 @@ function App() {
                   className="w-full h-52 object-cover"
                 />
                 <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                  <span className="text-sm font-bold text-orange-600">
+                  <span className="text-sm font-bold text-[#7499d5]">
                     {apt.type}
                   </span>
                 </div>
@@ -1571,7 +1562,7 @@ function App() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-xl font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">
+                    <p className="text-xl font-bold text-[#7499d5]">
                       {apt.price} DH
                     </p>
                     <p className="text-xs text-gray-500">/month</p>
@@ -1637,13 +1628,13 @@ function App() {
     const totalBalance = wallets.reduce((sum, w) => sum + w.balance, 0);
 
     return (
-      <div className="h-screen flex flex-col bg-gradient-to-b from-orange-50 to-white overflow-hidden">
+      <div className="h-screen flex flex-col bg-gradient-to-b from-gray-50 to-white overflow-hidden">
         {/* Header */}
         <div className="p-4 bg-white/80 backdrop-blur-sm border-b border-gray-100 flex items-center justify-between">
           <div>
             <h2 className="text-2xl font-bold text-gray-800">Shared Wallet</h2>
           </div>
-          <div className="px-3 py-1 rounded-full bg-orange-100 text-[11px] font-semibold text-orange-700 border border-orange-200">
+          <div className="px-3 py-1 rounded-full bg-gray-100 text-[11px] font-semibold text-[#7499d5] border border-gray-200">
             Secured by CIH
           </div>
         </div>
@@ -1652,7 +1643,7 @@ function App() {
         <div className="flex-1 overflow-y-auto pb-4">
           {/* Group Balance Card */}
           <div className="p-4">
-            <div className="bg-gradient-to-r from-orange-500 to-pink-500 rounded-3xl p-6 text-white shadow-xl">
+            <div className="bg-gradient-to-r from-[#7499d5] to-[#ed3500] rounded-3xl p-6 text-white shadow-xl">
               {/* Credit card image */}
               <div className="mb-5">
                 <img
@@ -1674,7 +1665,7 @@ function App() {
                 {/* 🔹 TRANSFER button opens the options modal */}
                 <button
                   onClick={() => setShowTransferOptions(true)}
-                  className="flex-1 bg-white/90 text-orange-600 py-3 rounded-xl font-semibold hover:bg-white transition"
+                  className="flex-1 bg-white/90 text-[#7499d5] py-3 rounded-xl font-semibold hover:bg-white transition"
                 >
                   Transfer
                 </button>
@@ -1710,7 +1701,7 @@ function App() {
                     </p>
                     <div className="w-full bg-gray-100 rounded-full h-1.5 mb-2">
                       <div
-                        className="bg-gradient-to-r from-orange-500 to-pink-500 h-1.5 rounded-full"
+                        className="bg-gradient-to-r from-[#7499d5] to-[#ed3500] h-1.5 rounded-full"
                         style={{ width: `${progress}%` }}
                       />
                     </div>
@@ -1735,7 +1726,7 @@ function App() {
                   {pendingBills.map((bill) => (
                     <div
                       key={bill.id}
-                      className="bg-white rounded-2xl p-3 shadow-sm border border-orange-200 flex items-center justify-between"
+                      className="bg-white rounded-2xl p-3 shadow-sm border border-gray-200 flex items-center justify-between"
                     >
                       <div>
                         <p className="text-sm font-semibold text-gray-800">
@@ -1744,13 +1735,13 @@ function App() {
                         <p className="text-xs text-gray-500">
                           {bill.walletName} • {bill.description}
                         </p>
-                        <p className="text-[11px] text-orange-600 mt-0.5">
+                        <p className="text-[11px] text-[#7499d5] mt-0.5">
                           {bill.deadline} • waiting for your payment
                         </p>
                       </div>
                       <button
                         onClick={() => handlePayBill(bill)}
-                        className="text-xs font-semibold bg-gradient-to-r from-orange-500 to-pink-500 text-white px-3 py-1.5 rounded-full hover:shadow-md transition"
+                        className="text-xs font-semibold bg-[#ed3500] text-white px-3 py-1.5 rounded-full hover:shadow-md transition"
                       >
                         Pay now
                       </button>
@@ -1813,7 +1804,7 @@ function App() {
                     setShowTransferOptions(false);
                     setTransferForm((prev) => ({ ...prev, to: 'Sarah' }));
                   }}
-                  className="w-full py-3 rounded-xl bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold hover:shadow-md transition"
+                  className="w-full py-3 rounded-xl bg-[#ff6347] text-white font-semibold hover:shadow-md transition"
                 >
                   Transfer to roommate
                 </button>
@@ -1874,7 +1865,7 @@ function App() {
                         walletId: e.target.value,
                       })
                     }
-                    className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                   >
                     {wallets.map((w) => (
                       <option key={w.id} value={w.id}>
@@ -1898,7 +1889,7 @@ function App() {
                           from: e.target.value,
                         })
                       }
-                      className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                      className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                     />
                   </div>
 
@@ -1915,7 +1906,7 @@ function App() {
                             to: e.target.value,
                           })
                         }
-                        className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                        className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                       >
                         {demoRoommates.map((r) => (
                           <option key={r} value={r}>
@@ -1939,7 +1930,7 @@ function App() {
                           })
                         }
                         placeholder="e.g. Landlord Hassan"
-                        className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                        className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                       />
                     </div>
                   )}
@@ -1960,13 +1951,13 @@ function App() {
                       })
                     }
                     placeholder="e.g. 500"
-                    className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                    className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#7499d5]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full mt-2 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all"
+                  className="w-full mt-2 py-3 bg-[#7499d5]  text-white rounded-xl font-semibold hover:shadow-lg transition-all"
                 >
                   Transfer
                 </button>
@@ -1980,9 +1971,9 @@ function App() {
 
 
   const ProfileTab = () => (
-    <div className="h-full flex flex-col bg-gradient-to-b from-orange-50 to-white overflow-y-auto">
+    <div className="h-full flex flex-col bg-gradient-to-b from-gray-50 to-white overflow-y-auto">
       {/* Header */}
-      <div className="bg-gradient-to-r from-orange-500 to-pink-500 p-6 pb-20">
+      <div className="bg-gradient-to-r from-[#7499d5] to-[#ff6347] p-6 pb-20">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-bold text-white">Profile</h2>
           <button className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition">
@@ -2018,15 +2009,15 @@ function App() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-3 mt-6 mb-6">
             <div className="text-center">
-              <p className="text-2xl font-bold text-orange-600">12</p>
+              <p className="text-2xl font-bold text-[#ed3500]">12</p>
               <p className="text-xs text-gray-500">Matches</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-bold text-pink-600">5</p>
+              <p className="text-2xl font-bold text-[#ed3500]">5</p>
               <p className="text-xs text-gray-500">Favorites</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-bold text-purple-600">3</p>
+              <p className="text-2xl font-bold text-[#ed3500]">3</p>
               <p className="text-xs text-gray-500">Views</p>
             </div>
           </div>
@@ -2056,7 +2047,7 @@ function App() {
         </button>
         <button
           onClick={() => setIsLoggedIn(false)}
-          className="w-full bg-gradient-to-r from-red-500 to-pink-500 text-white py-4 rounded-2xl font-semibold hover:shadow-lg transition flex items-center justify-center gap-2 mt-4"
+          className="w-full bg-[#ff6347] text-white py-4 rounded-2xl font-semibold hover:shadow-lg transition flex items-center justify-center gap-2 mt-4"
         >
           <LogOut size={20} />
           Logout
@@ -2152,7 +2143,7 @@ function App() {
                 <button
                   onClick={() => setActiveTab('profile')}
                   className={`flex flex-col items-center gap-1 px-2 py-2 rounded-xl transition-all ${activeTab === 'profile'
-                    ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white'
+                    ? 'bg-[#ff6347] text-white'
                     : 'text-gray-400 hover:text-gray-600'
                     }`}
                 >
@@ -2162,7 +2153,7 @@ function App() {
                 <button
                   onClick={() => setActiveTab('roommates')}
                   className={`flex flex-col items-center gap-1 px-2 py-2 rounded-xl transition-all ${activeTab === 'roommates'
-                    ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white'
+                    ? 'bg-[#ff6347] text-white'
                     : 'text-gray-400 hover:text-gray-600'
                     }`}
                 >
@@ -2172,7 +2163,7 @@ function App() {
                 <button
                   onClick={() => setActiveTab('wallet')}
                   className={`flex flex-col items-center gap-1 px-2 py-2 rounded-xl transition-all ${activeTab === 'wallet'
-                    ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white'
+                    ? 'bg-[#ff6347] text-white'
                     : 'text-gray-400 hover:text-gray-600'
                     }`}
                 >
@@ -2182,7 +2173,7 @@ function App() {
                 <button
                   onClick={() => setActiveTab('apartments')}
                   className={`flex flex-col items-center gap-1 px-2 py-2 rounded-xl transition-all ${activeTab === 'apartments'
-                    ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white'
+                    ? 'bg-[#ff6347] text-white'
                     : 'text-gray-400 hover:text-gray-600'
                     }`}
                 >
@@ -2192,7 +2183,7 @@ function App() {
                 <button
                   onClick={() => setActiveTab('chats')}
                   className={`flex flex-col items-center gap-1 px-2 py-2 rounded-xl transition-all ${activeTab === 'chats'
-                    ? 'bg-gradient-to-r from-orange-500 to-pink-500 text-white'
+                    ? 'bg-[#ff6347] text-white'
                     : 'text-gray-400 hover:text-gray-600'
                     }`}
                 >
